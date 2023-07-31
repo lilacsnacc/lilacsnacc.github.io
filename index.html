@@ -1,13 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nazaire's Vite Portfolio Start!</title>
+    <title>Nazaire's Fullstack Portfolio!</title>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // thanks to silverwind of Github - that console.log was SO ANNOYINGGGGGG
+      // https://github.com/facebook/react/issues/24283#issuecomment-1552160985
+      try {
+        console.info = new Proxy(console.info, {
+          apply: (target, thisArg, args) => {
+            if (args?.[0]?.includes?.('React DevTools')) return
+            return Reflect.apply(target, thisArg, args)
+          }
+        })
+      } catch {}
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

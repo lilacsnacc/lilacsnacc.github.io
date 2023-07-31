@@ -1,0 +1,38 @@
+.article {
+  position: absolute;
+  top: 0;
+  max-width: 800px;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: var(--primary);
+  background: var(--background-transparent);
+
+  & button, & a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+    font-size: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    color: var(--background);
+    background: var(--primary);
+    &:is(:hover) {
+      cursor: pointer;
+      color: var(--highlight);
+    }
+  }
+}
+
+.buttonContainer {
+  padding-top: 8px;
+  text-align: right;
+}
+
+@media (orientation: landscape) {
+  .article {
+    font-size: 24px;
+  }
+}

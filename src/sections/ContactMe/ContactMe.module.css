@@ -1,0 +1,61 @@
+.form {
+  padding: 8px;
+  background: var(--background-transparent);
+
+  & p {
+    margin: 0 0 8px;
+  }
+}
+
+.input {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  background: #eeed;
+  color: #000;
+  resize: none;
+}
+
+button.submitButton {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+  color: var(--background);
+  &:is(:hover) {
+    background-color: var(--primary);
+    color: var(--background);
+  }
+  &.loading {
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      var(--background-transparent) 10%,
+      var(--highlight) 50%,
+      var(--background-transparent) 10%
+    );
+    background-size: 512px 128px;
+  }
+}
+
+@keyframes gradiate {
+  from {
+    background-position: -512px 0;
+  }
+  to {
+    background-position: 512px 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button.submitButton.loading {
+    color: var(--background);
+    animation: gradiate infinite 1s linear;
+  }
+}

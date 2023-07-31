@@ -1,0 +1,28 @@
+/* thanks to franklin for a good starting point
+https://dev.to/franklin030601/using-dark-mode-in-your-react-app-5364
+*/
+
+:root {
+  --light-transparent: #eeea;
+  --background: #eee;
+  --background-transparent: #eeea;
+  --primary: #222;
+  --highlight: #daf;
+
+  color-scheme: light;
+}
+:root.dark {
+  --primary: #eee;
+  --highlight: #ca0;
+  --background: #222;
+  --background-transparent: #222a;
+
+  color-scheme: dark;
+}
+.theme-invert {
+  will-change: filter;
+  transition: filter 250ms;
+}
+:root.dark .theme-invert {
+  filter: invert(1);
+}
