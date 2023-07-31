@@ -24,8 +24,8 @@ export function AboutNaz() {
     <Section title='About Naz'>
       <article className={css.article}>
         <p>
-          Hello! I'm Naz, a fullstack software developer / designer with {yearsOfExp}+
-          years of experience. Nice to meet you :)
+          Hello! I'm Naz, a fullstack software developer with {yearsOfExp}+
+          years of experience. Nice to meet you 😊
         </p>
         <p>
           For this portfolio site, I tried to show off a bunch of my favorite tech - more
