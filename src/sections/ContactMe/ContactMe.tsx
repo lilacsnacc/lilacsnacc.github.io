@@ -1,14 +1,20 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent, useContext, useState } from 'react'
 
 import SendIcon from '@mui/icons-material/Send'
+
+import { openForHire, rate, emailEndpoint } from '../../constants'
+
+import { InteractiveButton } from '../../components/InteractiveButton'
+
+import { SectionContext } from '../../contexts/Section'
 
 import { Section } from '..'
 
 import css from './ContactMe.module.css'
-import { InteractiveButton } from '../../components/InteractiveButton'
-import { openForHire, rate, emailEndpoint } from '../../constants'
 
 export function ContactMe() {
+  const { openSnackbar } = useContext(SectionContext)
+
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -28,8 +34,11 @@ export function ContactMe() {
       })
     })
       .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(err => console.error(err.message))
+      .then(() => openSnackbar?.('message has been sent!', 'info'))
+      .catch(err => {
+        console.error(err)
+        openSnackbar?.('something went wrong!', 'error')
+      })
       .finally(() => {
         setEmail('')
         setMessage('')

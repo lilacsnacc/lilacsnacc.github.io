@@ -1,4 +1,5 @@
 import { createContext } from "react"
+import { AlertColor } from "@mui/material"
 
 export enum SectionIndex {
   Projects,
@@ -11,6 +12,7 @@ type CtxProps = {
   setSectionIdx?: (v: number | null) => void
   projectIdx?: number
   setProjectIdx?: (v: number) => void
+  openSnackbar?: (message: string, severity?: AlertColor) => void
 }
 
 export const SectionContext = createContext<CtxProps>({})
