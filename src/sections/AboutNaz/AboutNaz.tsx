@@ -10,6 +10,7 @@ import { openForHire, rate, yearsOfExp, email } from '../../constants'
 import { Section } from '..'
 import { SectionContext } from '../../contexts/Section'
 import { SectionIndex } from '../../contexts/Section/Section'
+import { InteractiveButton } from '../../components/InteractiveButton'
 
 import css from './AboutNaz.module.css'
 
@@ -22,6 +23,13 @@ export function AboutNaz() {
     navigator.clipboard.writeText(email)
     openSnackbar?.('email copied to clipboard')
   }
+  function downloadResume() {
+    const elem = document.createElement('a')
+
+    elem.download = 'Nazaire Shabazz Resume 2023'
+    elem.href = ResumePath
+    elem.click()
+  }
 
   return (
     <Section title='About Naz'>
@@ -32,27 +40,30 @@ export function AboutNaz() {
         </p>
         <p>
           For this portfolio site, I tried to show off a bunch of my favorite tech - more
-          info in the <button onClick={toMyProjects}>My Projects</button> section.
+          info in the{' '}
+          <InteractiveButton onClick={toMyProjects}>My Projects</InteractiveButton>{' '}
+          section.
         </p>
         <p>
           {openForHire
             ? `I am looking for new work, with rates starting at ${rate} - if you are looking for a developer, `
             : `I am not in the job market right now, but if you still want to chat, you can `}
-          reach me through the <button onClick={toContactMe}>Contact Me</button> form.
+          reach me through the{' '}
+          <InteractiveButton onClick={toContactMe}>Contact Me</InteractiveButton> form.
         </p>
         <div className={css.buttonContainer}>
           <p>
             email:{' '}
-            <button onClick={copyEmail}>
+            <InteractiveButton onClick={copyEmail}>
               {email}
               <CopyIcon />
-            </button>
+            </InteractiveButton>
           </p>
           <p>
             resume:{' '}
-            <a href={ResumePath} target='_blank' download>
+            <InteractiveButton onClick={downloadResume}>
               Nazaire Shabazz 2023 <DownloadIcon />
-            </a>
+            </InteractiveButton>
           </p>
         </div>
       </article>

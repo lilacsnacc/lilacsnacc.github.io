@@ -2,7 +2,7 @@
   width: 80%;
   max-width: 800px;
   padding: 16px;
-  margin: 64px auto 256px auto;
+  margin: 64px auto 160px auto;
   background: var(--background);
   color: var(--primary);
 
@@ -13,5 +13,11 @@
   & * {
     word-wrap: break-word;
     text-overflow: ellipsis !important;
+  }
+}
+
+@media (orientation: landscape) {
+  .reactMarkdown {
+    margin-bottom: 256px;
   }
 }

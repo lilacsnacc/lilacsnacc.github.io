@@ -7,7 +7,7 @@
   color: var(--primary);
   background: var(--background-transparent);
 
-  & button, & a {
+  & button {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
@@ -23,6 +23,7 @@
     &:is(:hover) {
       cursor: pointer;
       color: var(--highlight);
+      background: var(--primary-highlight);
     }
   }
 }
