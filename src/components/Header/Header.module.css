@@ -1,13 +1,13 @@
 .header {
   display: flex;
   align-items: center;
-  z-index: 5;
 }
 
 .menu {
   flex: 1;
   display: flex;
   justify-content: end;
+  gap: 16px;
   list-style: none;
 }
 

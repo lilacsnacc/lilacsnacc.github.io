@@ -1,9 +1,12 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { AlertColor } from '@mui/material'
 
 import ProjectsIcon from '@mui/icons-material/FolderSpecial'
 import AboutIcon from '@mui/icons-material/Badge'
 import EmailIcon from '@mui/icons-material/Email'
+
+import { ProjectMetadata } from '../../models/database.types'
+import { useProjects } from '../../hooks/useProjects'
 
 import { SectionContext } from '../../contexts/Section'
 import { SectionIndex } from '../../contexts/Section/Section'
@@ -17,6 +20,7 @@ import { AboutNaz } from '../../sections/AboutNaz'
 import { ContactMe } from '../../sections/ContactMe'
 
 import css from './Main.module.css'
+import { MarkdownViewer } from '../MarkdownViewer/MarkdownViewer'
 
 const content: { icon: ReactNode; section: ReactNode }[] = []
 content[SectionIndex.Projects] = { icon: <ProjectsIcon />, section: <Projects /> }
@@ -26,16 +30,20 @@ content[SectionIndex.Projects] = { icon: <ProjectsIcon />, section: <Projects />
 const defaultSection = <Section title={"Nazaire Shabazz's Portfolio"} />
 
 export const Main = () => {
-  const [projectIdx, setProjectIdx] = useState(0)
+  const { data: resProjects, error: errProjects, loading } = useProjects()
+
+  const [currentProject, setCurrentProject] = useState<ProjectMetadata>()
+  const [projects, setProjects] = useState<ProjectMetadata[]>()
+  const [projectId, setProjectId] = useState<number | null>()
   const [sectionIdx, setSectionIdx] = useState<number | null>()
-  
+
   const [snackbarMessage, setSnackbarMessage] = useState('')
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarSeverity, setSnackarSeverity] = useState<AlertColor>('success')
 
   const onSectionButtonClick = (index: number) =>
-    !sectionIdx === !index && projectIdx
-      ? setProjectIdx(0)
+    !sectionIdx === !index && projectId
+      ? setProjectId(null)
       : setSectionIdx(sectionIdx === index ? null : index)
 
   function openSnackbar(message: string, severity: AlertColor = 'success') {
@@ -49,18 +57,45 @@ export const Main = () => {
     setSnackbarOpen(false)
   }
 
+  useEffect(() => {
+    if (loading) return
+
+    resProjects && setProjects(resProjects)
+    resProjects && console.log('project data:', resProjects)
+    errProjects && console.log('error', errProjects)
+  }, [loading])
+
+  useEffect(() => {
+    setCurrentProject(projects?.find(({ id }) => id == projectId))
+  }, [projects, projectId])
+
   return (
     <SectionContext.Provider
-      value={{ projectIdx, setProjectIdx, sectionIdx, setSectionIdx, openSnackbar }}
+      value={{
+        projects,
+        projectId,
+        setProjectId,
+        sectionIdx,
+        setSectionIdx,
+        openSnackbar
+      }}
     >
       <main className={css.main}>
+        {currentProject && (
+          <MarkdownViewer
+            sourceUrl={currentProject.markdown_url}
+            className={css.markdown}
+            onClose={() => setProjectId(null)}
+          />
+        )}
+
         {sectionIdx == null ? defaultSection : content[sectionIdx].section}
 
-        <menu className={css.menu}>
+        <menu className={`${css.menu} ${currentProject && css.lower}`}>
           {content.reduce((arr, { icon: children }, key) => {
             arr.push(
               <ToggleSectionButton
-                className='particle-bouncer-rectangle'
+                className={`particle-bouncer-rectangle`}
                 toggled={sectionIdx === key}
                 clockwise={key < content.length * 0.5}
                 onClick={() => onSectionButtonClick(key)}
@@ -74,6 +109,8 @@ export const Main = () => {
 
             return arr
           }, [] as ReactNode[])}
+
+          <div className={css.bgGradient}></div>
         </menu>
       </main>
 

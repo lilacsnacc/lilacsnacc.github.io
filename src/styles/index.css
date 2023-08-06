@@ -21,6 +21,10 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+a:any-link {
+  color: var(--primary-highlight)
+}
+
 ::selection {
   color: var(--primary);
   background-color: var(--highlight);

@@ -1,5 +1,6 @@
-import { createContext } from "react"
-import { AlertColor } from "@mui/material"
+import { createContext } from 'react'
+import { AlertColor } from '@mui/material'
+import { ProjectMetadata } from '../../models/database.types'
 
 export enum SectionIndex {
   Projects,
@@ -8,10 +9,11 @@ export enum SectionIndex {
 }
 
 type CtxProps = {
+  projects?: ProjectMetadata[]
   sectionIdx?: number | null
   setSectionIdx?: (v: number | null) => void
-  projectIdx?: number
-  setProjectIdx?: (v: number) => void
+  projectId?: number | null
+  setProjectId?: (v: number | null) => void
   openSnackbar?: (message: string, severity?: AlertColor) => void
 }
 

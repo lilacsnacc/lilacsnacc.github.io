@@ -21,3 +21,8 @@ export const openForHire = true
 export const email = 'nqshabazz@gmail.com'
 /** aws endpoint for the SendEmail lambda */
 export const emailEndpoint = `https://qe3jimzxlpnieteo22a3by7dl40xbkqg.lambda-url.us-east-1.on.aws/`
+/** supabase endpoint for Projects table */
+export const supabaseEndpoint = 'https://jercroowyaivkdvwfpki.supabase.co'
+/** supabase anon key */
+export const supabaseAnonKey =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImplcmNyb293eWFpdmtkdndmcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTEzMzI4NDcsImV4cCI6MjAwNjkwODg0N30.QFb1ejcHe6991ywjHdC6YKrj99psVVCHfjsKg_C9NCo'

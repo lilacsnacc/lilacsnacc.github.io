@@ -1,11 +1,15 @@
 import { ReactNode, useContext } from 'react'
 
-import { IconButton } from '@mui/material'
+import { IconButton, SxProps } from '@mui/material'
 
 import { AudioContext } from '../../contexts/Audio'
 
+import css from './InteractiveButton.module.css'
+
 type InteractiveButtonProps = {
   onClick?: () => any
+  sx?: SxProps
+  title?: string
   isSubmit?: boolean
   className?: string
   children?: ReactNode
@@ -14,7 +18,7 @@ type InteractiveButtonProps = {
 export const InteractiveButton = (props: InteractiveButtonProps) => {
   const { playSound, setUserInteracted } = useContext(AudioContext)
 
-  const { onClick: clickCB, isSubmit, className = '', children } = props
+  const { onClick: clickCB, isSubmit, className = '', title = '', sx, children } = props
 
   const onMouseEnter = () => playSound?.('hover')
 
@@ -29,8 +33,9 @@ export const InteractiveButton = (props: InteractiveButtonProps) => {
     <IconButton
       color='inherit'
       type={isSubmit ? 'submit' : undefined}
-      className={`${className}`}
-      {...{ onClick, onMouseEnter, children }}
+      className={`${className} ${css.iconButton}`}
+      aria-label={title}
+      {...{ onClick, onMouseEnter, children, title, sx }}
     />
   )
 }

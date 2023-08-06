@@ -1,0 +1,11 @@
+button.projectButton {
+  border-radius: 4px;
+  background-size: contain;
+  transition: transform 100ms linear;
+
+  &:hover {
+    border: 8px solid var(--primary-highlight);
+    background-color: initial;
+    transform: scale(1.1);
+  }
+}

@@ -16,6 +16,7 @@
   box-sizing: border-box;
   overflow-x: auto;
   margin: 0 auto;
+  background: var(--background-transparent);
 }
 
 .containerBuffers {
@@ -36,17 +37,12 @@
   transform: rotate(45deg);
 }
 
-.square {
+*.square {
   width: var(--squareSize);
   height: var(--squareSize);
-  background-color: var(--primary);
-  border-radius: 4px;
 
   &.blank {
     visibility: hidden;
-  }
-  &:hover {
-    background-color: var(--primary-highlight);
   }
 }
 

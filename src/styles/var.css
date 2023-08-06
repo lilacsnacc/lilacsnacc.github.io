@@ -24,6 +24,6 @@ https://dev.to/franklin030601/using-dark-mode-in-your-react-app-5364
   will-change: filter;
   transition: filter 250ms;
 }
-:root.dark .theme-invert {
+:root.dark img.theme-invert {
   filter: invert(1);
 }
