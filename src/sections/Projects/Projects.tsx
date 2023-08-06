@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
+import { Fade } from '@mui/material'
 
 import { Section } from '..'
 
 import css from './Projects.module.css'
-import { Fade, Grow } from '@mui/material'
 
 type ProjectMetadata = {}
 
