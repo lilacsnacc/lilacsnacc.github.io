@@ -26,11 +26,12 @@ button.submitButton {
   width: 100%;
   padding: 8px;
   border-radius: 4px;
-  background-color: var(--primary);
+  background-color: var(--primary-highlight);
   color: var(--background);
+  
   &:is(:hover) {
-    background-color: var(--primary);
-    color: var(--background);
+    background-color: var(--primary-highlight);
+    color: var(--highlight);
   }
   &.loading {
     pointer-events: none;

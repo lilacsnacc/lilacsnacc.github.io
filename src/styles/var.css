@@ -3,17 +3,18 @@ https://dev.to/franklin030601/using-dark-mode-in-your-react-app-5364
 */
 
 :root {
-  --light-transparent: #eeea;
-  --background: #eee;
-  --background-transparent: #eeea;
   --primary: #222;
   --highlight: #daf;
+  --primary-highlight: #84a;
+  --background: #eee;
+  --background-transparent: #eeea;
 
   color-scheme: light;
 }
 :root.dark {
   --primary: #eee;
-  --highlight: #ca0;
+  --highlight: rgb(190, 158, 1);
+  --primary-highlight: rgb(218, 191, 12);
   --background: #222;
   --background-transparent: #222a;
 

@@ -16,7 +16,7 @@
 .line {
   flex: 1 0 40%;
   margin: 0 16px;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--primary-highlight);
 }
 
 @keyframes spin {

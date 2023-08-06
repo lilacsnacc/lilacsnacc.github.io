@@ -64,7 +64,7 @@ export function ContactMe() {
         />
         <textarea
           required
-          rows={5}
+          rows={4}
           placeholder='Message'
           value={message}
           className={css.input}
