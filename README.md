@@ -1,27 +1,32 @@
-# React + TypeScript + Vite
+# My Portfolio!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This portfolio has indeed been a big project of mine.
 
-Currently, two official plugins are available:
+For this portfolio site, I tried to show off a bunch of my favorite tech.
+From the beginning, you can see that I know how to use React, Vite, and MUI (MaterialUI)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I also made sure to use AWS technologies, and separately, their new rival, Supabase!
+There are a few other fun bits, but that's it for the summary. From here it gets technical
 
-## Expanding the ESLint configuration
+## React, Vite, & MUI:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- I used React because it is a popular library with solid features and principles. I prefer Svelte, but I already have another project showcasing Svelte, and although I could showcase Angular skills, Angular seems to be falling off these days...
+- I used Vite because it is the lean, modern alternative to create-react-app, which has a ton of vulnerabilities and hasn't been maintained in years...
+  - Next.js was in consideration, but I prefer that for bigger, bulkier projects (think Enterprise)
+- MUI was used for its massively helpful premade components. MUI provides the snackbar that pops up, the transition on the project buttons, and almost all of the icons in my portfolio
+- Otherwise, I wanted to show an understanding of modern css, UX / UI, and an ability to use libraries such as react-tsparticles
 
-- Configure the top-level `parserOptions` property like this:
+## AWS (Amazon Web Services)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+This is a technology I've known for 5 years. If you or your team makes use of AWS, I can help!
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- When you send an email through the Contact Me form, that happens via AWS. The classic way would be to set up an API Gateway to a Lambda, but this time I used Lambda with Edge functions! The function is written in Python, and it makes use of Amazon SES to format and send to my personal email.
+- I also made sure to use S3 somewhere, since that's always popular. It wasn't super necessary, but I host some of the project metadatas' markdown and images in AWS. I also set the access policy to read-only, with a suitable CORS policy.
+  - If I did not use S3, I would just place the assets in the portfolio's public folder
+
+## Supabase
+
+This is a completely new technology to me, and I really enjoyed using it!!
+
+- The metadata for the projects table is hosted in Supabase. I used SQL for most of the procedure, but the Supabase interface is very well-made. Unfortunately, I didn't think of a way to show off deeper SQL knowledge (such as JOIN, VIEW, etc).
+- I also briefly used the Supabase bucket storage (their answer to S3), but since they have time-limited access URLs I decided to stick with Amazon's storage solution
