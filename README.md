@@ -30,3 +30,13 @@ This is a completely new technology to me, and I really enjoyed using it!!
 
 - The metadata for the projects table is hosted in Supabase. I used SQL for most of the procedure, but the Supabase interface is very well-made. Unfortunately, I didn't think of a way to show off deeper SQL knowledge (such as JOIN, VIEW, etc).
 - I also briefly used the Supabase bucket storage (their answer to S3), but since they have time-limited access URLs I decided to stick with Amazon's storage solution
+
+## Conclusion
+
+All that said, I'm still not done with the site! The finishing touches will include:
+
+- Adding multiplayer interaction to the background. I was going to spin up a server and do websockets through socket.io, but Supabase has some interesting offerings for realtime data. The interaction won't be anything amazing - just divs that repel the particles, positioned at the players' mouse cursors.
+
+- Adding a ton of tests to my components. One thing I would have liked to show off more is that I am familiar with unit testing and integration testing with Jest (I avoid snapshots like the plague).
+
+Otherwise, if there's anything else that piqued your interest let's get in touch! This is my code for my portfolio, so there's no NDA preventing me from showing you.
