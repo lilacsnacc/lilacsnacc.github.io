@@ -23,9 +23,10 @@ import css from './Main.module.css'
 import { MarkdownViewer } from '../MarkdownViewer/MarkdownViewer'
 
 const content: { icon: ReactNode; section: ReactNode }[] = []
+
 content[SectionIndex.Projects] = { icon: <ProjectsIcon />, section: <Projects /> }
-;(content[SectionIndex.AboutNaz] = { icon: <AboutIcon />, section: <AboutNaz /> }),
-  (content[SectionIndex.ContactMe] = { icon: <EmailIcon />, section: <ContactMe /> })
+content[SectionIndex.AboutNaz] = { icon: <AboutIcon />, section: <AboutNaz /> }
+content[SectionIndex.ContactMe] = { icon: <EmailIcon />, section: <ContactMe /> }
 
 const defaultSection = <Section title={"Nazaire Shabazz's Portfolio"} />
 

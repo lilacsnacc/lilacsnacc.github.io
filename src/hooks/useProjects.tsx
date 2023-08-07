@@ -16,7 +16,7 @@ export const useProjects = () => {
   useEffect(() => {
     ;(async () => {
       try {
-        const { data, error } = await supabase.from('projects').select()
+        const { data, error } = await supabase.from('project_metadata').select()
 
         data && setData(data)
         error && setError(error)

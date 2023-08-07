@@ -17,7 +17,7 @@ export type ProjectMetadata = {
 export interface Database {
   public: {
     Tables: {
-      projects: {
+      project_metadata: {
         Row: ProjectMetadata
         Insert: ProjectMetadata
         Update: ProjectMetadata
