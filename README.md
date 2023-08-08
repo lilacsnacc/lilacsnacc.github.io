@@ -36,7 +36,7 @@ This is a completely new technology to me, and I really enjoyed using it!!
 All that said, I'm still not done with the site! The finishing touches will include:
 
 - Adding multiplayer interaction to the background. I was going to spin up a server and do websockets through socket.io, but Supabase has some interesting offerings for realtime data. The interaction won't be anything amazing - just divs that repel the particles, positioned at the players' mouse cursors.
-
 - Adding a ton of tests to my components. One thing I would have liked to show off more is that I am familiar with unit testing and integration testing with Jest (I avoid snapshots like the plague).
+- Make the project markdowns more exciting. Add some pictures, color, spice!
 
 Otherwise, if there's anything else that piqued your interest let's get in touch! This is my code for my portfolio, so there's no NDA preventing me from showing you.
