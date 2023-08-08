@@ -32,8 +32,8 @@ content[SectionIndex.ContactMe] = { icon: <EmailIcon />, section: <ContactMe /> 
 const defaultSection = (
   <Section title={"Nazaire Shabazz's Portfolio"}>
     <div style={{textAlign: 'center'}}>
-      <p>🛠️ Landing page still under reconstruction! 🛠️</p>
-      <p>In the meantime, check out the options below ^_^</p>
+      <h2>Fullstack Web Developer</h2>
+      <p>🛠️ Landing page still under reconstruction! 🛠️ Check out the options below ^_^</p>
     </div>
   </Section>
 )
