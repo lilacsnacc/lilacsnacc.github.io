@@ -28,7 +28,15 @@ content[SectionIndex.Projects] = { icon: <ProjectsIcon />, section: <Projects />
 content[SectionIndex.AboutNaz] = { icon: <AboutIcon />, section: <AboutNaz /> }
 content[SectionIndex.ContactMe] = { icon: <EmailIcon />, section: <ContactMe /> }
 
-const defaultSection = <Section title={"Nazaire Shabazz's Portfolio"} />
+/** This is v much temporary, so I'll allow it */
+const defaultSection = (
+  <Section title={"Nazaire Shabazz's Portfolio"}>
+    <div style={{textAlign: 'center'}}>
+      <p>🛠️ Landing page still under reconstruction! 🛠️</p>
+      <p>In the meantime, check out the options below ^_^</p>
+    </div>
+  </Section>
+)
 
 export const Main = () => {
   const { data: resProjects, error: errProjects, loading } = useProjects()
