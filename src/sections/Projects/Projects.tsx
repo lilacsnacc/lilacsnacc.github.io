@@ -1,4 +1,4 @@
-import { ReactNode, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import { SectionContext } from '../../contexts/Section'
 
