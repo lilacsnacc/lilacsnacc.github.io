@@ -8,6 +8,8 @@ import { ProjectButton } from '../../components/InteractiveButton/ProjectButton'
 import css from './Projects.module.css'
 import { ProjectMetadata } from '../../models/database.types'
 
+const blankProject = { id: -1, name: '', bg_color: '', image_url: '', markdown_url: '' }
+
 export function Projects() {
   const { projects, setProjectId } = useContext(SectionContext)
   const [chunkedProjects, setChunkedProjects] = useState<ProjectMetadata[][]>([])
@@ -15,8 +17,12 @@ export function Projects() {
   useEffect(() => {
     if (!projects) return
 
-    const newProjects = Array.from({ length: Math.ceil(projects.length / 3) }, (_, i) =>
-      projects.slice(i * 3, i * 3 + 3)
+    const projArr = [...projects]
+
+    if (projArr.length > 1) projArr.unshift(blankProject)
+
+    const newProjects = Array.from({ length: Math.ceil(projArr.length / 3) }, (_, i) =>
+      projArr.slice(i * 3, i * 3 + 3)
     )
 
     setChunkedProjects(newProjects)
@@ -29,23 +35,17 @@ export function Projects() {
         {chunkedProjects.map((prjArr, i) => {
           return (
             <div className={css.squareContainer} key={`container-${i}`}>
-              {prjArr.reduce((arr, prj, j) => {
-                if (!i && !j)
-                  arr.push(<div className={`${css.square} ${css.blank}`} key='blank' />)
-
-                arr.push(
-                  <ProjectButton
-                    title={prj.name || ''}
-                    onClick={() => setProjectId?.(prj.id)}
-                    bgImageUrl={prj.image_url || ''}
-                    bgColor={prj.bg_color || ''}
-                    transitionDelay={`${(i * 3 + j) * 100}ms`}
-                    className={css.square}
-                    key={`square-${j}`}
-                  />
-                )
-                return arr
-              }, [] as ReactNode[])}
+              {prjArr.map((prj, j) => (
+                <ProjectButton
+                  title={prj.name || ''}
+                  onClick={() => setProjectId?.(prj.id)}
+                  bgImageUrl={prj.image_url || ''}
+                  bgColor={prj.bg_color || ''}
+                  transitionDelay={`${(i * 3 + j) * 100}ms`}
+                  className={`${css.square} ${!prj.name && css.blank}`}
+                  key={`square-${j}`}
+                />
+              ))}
             </div>
           )
         })}

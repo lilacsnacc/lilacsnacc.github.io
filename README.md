@@ -2,11 +2,9 @@
 
 This portfolio has indeed been a big project of mine.
 
-For this portfolio site, I tried to show off a bunch of my favorite tech.
-From the beginning, you can see that I know how to use React, Vite, and MUI (MaterialUI)
+For this portfolio site, I tried to show off a bunch of my favorite tech. From the beginning, you can see that I know how to use React (TypeScript), Vite, and MUI (MaterialUI)
 
-I also made sure to use AWS technologies, and separately, their new rival, Supabase!
-There are a few other fun bits, but that's it for the summary. From here it gets technical
+I also made sure to use AWS technologies, and separately, their new rival, Supabase! There are a few other fun bits, but that's it for the summary. From here it gets technical:
 
 ## React, Vite, & MUI:
 

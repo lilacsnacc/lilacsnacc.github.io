@@ -60,8 +60,9 @@ export function AudioProvider({ children }: { children?: ReactNode }) {
 
     Sounds.bgm.loop = true
     Sounds.bgm.volume = mute ? 0 : 0.4
-    Sounds.hover.volume = mute ? 0 : 0.2
+    Sounds.hover.volume = mute ? 0 : 0.1
     Sounds.click.volume = mute ? 0 : 0.05
+    Sounds.hover.playbackRate = 2
     Sounds.click.playbackRate = 2.5
 
     !mute && Sounds.bgm.play()
