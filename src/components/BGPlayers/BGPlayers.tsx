@@ -29,18 +29,16 @@ export const BGPlayers = () => {
   const { sendBroadcast } = usePlayerPositions(onUpdate)
 
   useEffect(() => {
-    function onMouseMove({ x, y }: MouseEvent) {
+    function onMouseMove({ x: mX, y: mY }: MouseEvent) {
       const docEl = document.documentElement
       const playerSizeStyle = getComputedStyle(docEl).getPropertyValue('--player-size')
       const offset = Number(playerSizeStyle.replace(/\D/g, '') || 0) * 0.5
-      const position = {
-        x: (100 * (x - offset - 4)) / (innerWidth || x * 2),
-        y: (100 * (y - offset - 4)) / (innerHeight || y * 2)
-      }
+      const x = Number(((100 * (mX - offset - 4)) / (innerWidth || mX * 2)).toFixed(2))
+      const y = Number(((100 * (mY - offset - 4)) / (innerHeight || mY * 2)).toFixed(2))
 
-      setCursorPosition({x, y})
-      setTargetPosition(localID, position)
-      sendBroadcast(position)
+      setCursorPosition({ x: mX, y: mY })
+      setTargetPosition(localID, { x, y })
+      sendBroadcast({ x, y })
     }
 
     window.addEventListener('mousemove', onMouseMove)
