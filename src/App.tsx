@@ -7,6 +7,7 @@ import { Header } from './components/Header'
 import { Main } from './components/Main'
 import { Footer } from './components/Footer'
 import { BGParticles } from './components/BGParticles'
+import { BGPlayers } from './components/BGPlayers'
 
 export default () => (
   <UserSettingsProvider>
@@ -14,6 +15,7 @@ export default () => (
       <Header />
       <Main />
       <Footer />
+      <BGPlayers />
       <BGParticles />
     </AudioProvider>
   </UserSettingsProvider>

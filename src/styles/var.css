@@ -8,6 +8,8 @@ https://dev.to/franklin030601/using-dark-mode-in-your-react-app-5364
   --primary-highlight: #84a;
   --background: #eee;
   --background-transparent: #eeea;
+  
+  --player-size: 128px;
 
   color-scheme: light;
 }

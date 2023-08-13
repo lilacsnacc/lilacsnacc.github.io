@@ -1,5 +1,8 @@
 import { useContext } from 'react'
 
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import CopyIcon from '@mui/icons-material/ContentCopy'
 import DownloadIcon from '@mui/icons-material/FileDownload'
 
@@ -19,6 +22,9 @@ export function AboutNaz() {
 
   const toMyProjects = () => setSectionIdx?.(SectionIndex.Projects)
   const toContactMe = () => setSectionIdx?.(SectionIndex.ContactMe)
+  const toGithub = () => window.open('https://github.com/lilacsnacc', '_blank')?.focus()
+  const toLinkedIn = () =>
+    window.open('https://www.linkedin.com/in/nqshabazz/', '_blank')?.focus()
   function copyEmail() {
     navigator.clipboard.writeText(email)
     openSnackbar?.('email copied to clipboard')
@@ -51,6 +57,14 @@ export function AboutNaz() {
           reach me through the{' '}
           <InteractiveButton onClick={toContactMe}>Contact Me</InteractiveButton> form.
         </p>
+        <InteractiveButton onClick={toGithub}>
+          Github <GitHubIcon />
+          <OpenInNewIcon />
+        </InteractiveButton>{' '}
+        <InteractiveButton onClick={toLinkedIn}>
+          LinkedIn <LinkedInIcon />
+          <OpenInNewIcon />
+        </InteractiveButton>
         <div className={css.buttonContainer}>
           <p>
             email:{' '}

@@ -5,6 +5,14 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  cursor: none;
+
+  & p,
+  & h1,
+  & h2,
+  & a {
+    cursor: text;
+  }
 }
 
 :root {
@@ -22,7 +30,7 @@ body {
 }
 
 a:any-link {
-  color: var(--primary-highlight)
+  color: var(--primary-highlight);
 }
 
 ::selection {

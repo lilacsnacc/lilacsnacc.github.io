@@ -1,0 +1,27 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: unset !important;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.player {
+  position: absolute;
+  width: var(--player-size);
+  height: var(--player-size);
+  border-radius: 100%;
+  border: 4px solid var(--highlight)
+}
+
+.cursor {
+  position: absolute;
+  padding: 16px;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  background: var(--primary-highlight);
+}

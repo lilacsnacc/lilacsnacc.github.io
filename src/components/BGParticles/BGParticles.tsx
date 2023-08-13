@@ -53,6 +53,12 @@ export const BGParticles = () => {
             onDiv: [
               {
                 enable: true,
+                selectors: '.particle-repulser-circle',
+                mode: 'repulse',
+                type: 'circle'
+              },
+              {
+                enable: true,
                 selectors: '.particle-bouncer-circle',
                 mode: 'bounce',
                 type: 'circle'

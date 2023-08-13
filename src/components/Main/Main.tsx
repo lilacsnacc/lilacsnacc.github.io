@@ -50,10 +50,12 @@ export const Main = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarSeverity, setSnackarSeverity] = useState<AlertColor>('success')
 
-  const onSectionButtonClick = (index: number) =>
-    !sectionIdx === !index && projectId
-      ? setProjectId(null)
-      : setSectionIdx(sectionIdx === index ? null : index)
+  function onSectionButtonClick(index: number){
+    if (index !== sectionIdx || !projectId)
+      setSectionIdx(sectionIdx === index ? null : index)
+
+    setProjectId(null)
+  }
 
   function openSnackbar(message: string, severity: AlertColor = 'success') {
     setSnackarSeverity(severity)

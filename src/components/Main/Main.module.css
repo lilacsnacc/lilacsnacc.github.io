@@ -15,7 +15,7 @@
   background: #222a;
   overflow-x: hidden;
   overflow-y: scroll;
-  z-index: 3;
+  z-index: 2;
 }
 
 .menu {
