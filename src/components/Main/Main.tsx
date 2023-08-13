@@ -31,9 +31,11 @@ content[SectionIndex.ContactMe] = { icon: <EmailIcon />, section: <ContactMe /> 
 /** This is v much temporary, so I'll allow it */
 const defaultSection = (
   <Section title={"Nazaire Shabazz's Portfolio"}>
-    <div style={{textAlign: 'center'}}>
+    <div style={{ textAlign: 'center' }}>
       <h2>Fullstack Web Developer</h2>
-      <p>🛠️ Landing page still under reconstruction! 🛠️ Check out the options below ^_^</p>
+      <p>
+        🛠️ Landing page still under reconstruction! 🛠️ Check out the options below ^_^
+      </p>
     </div>
   </Section>
 )
@@ -50,7 +52,7 @@ export const Main = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarSeverity, setSnackarSeverity] = useState<AlertColor>('success')
 
-  function onSectionButtonClick(index: number){
+  function onSectionButtonClick(index: number) {
     if (index !== sectionIdx || !projectId)
       setSectionIdx(sectionIdx === index ? null : index)
 
@@ -108,7 +110,6 @@ export const Main = () => {
               <ToggleSectionButton
                 className={`particle-bouncer-rectangle`}
                 toggled={sectionIdx === key}
-                clockwise={key < content.length * 0.5}
                 onClick={() => onSectionButtonClick(key)}
                 {...{ children, key }}
               />

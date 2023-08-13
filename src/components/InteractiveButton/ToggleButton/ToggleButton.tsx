@@ -8,22 +8,16 @@ import css from './ToggleButton.module.css'
 type ToggleButtonProps = {
   toggled: boolean
   onClick: () => any
-  clockwise?: boolean
   className?: string
   children?: ReactNode
 }
 
 export const ToggleButton = (props: ToggleButtonProps) => {
-  const { toggled, className = '', onClick, clockwise, children } = props
+  const { toggled, className = '', onClick, children } = props
 
   return (
     <InteractiveButton
-      className={[
-        className,
-        css.menuButton,
-        toggled && css.active,
-        clockwise && css.clockwise
-      ].join(' ')}
+      className={[className, css.menuButton, toggled && css.active].join(' ')}
       {...{ onClick }}
     >
       {toggled ? <RotatedX /> : children}

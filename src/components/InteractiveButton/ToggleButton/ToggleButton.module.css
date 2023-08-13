@@ -7,9 +7,6 @@ button.menuButton {
   transform: rotate(45deg);
   transition: transform 100ms linear, color 250ms linear, margin 100ms linear;
 
-  &.clockwise {
-    transform: rotate(-45deg);
-  }
   &:hover {
     background-color: var(--primary);
     & svg {
@@ -20,10 +17,7 @@ button.menuButton {
     color: var(--highlight);
     transform: rotate(-45deg) scale(1.2);
     z-index: 2;
-    
-    &.clockwise {
-      transform: rotate(45deg) scale(1.2);
-    }
+
     & svg {
       border-color: var(--primary-highlight);
     }
