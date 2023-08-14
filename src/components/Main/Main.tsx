@@ -11,34 +11,29 @@ import { useProjects } from '../../hooks/useProjects'
 import { SectionContext } from '../../contexts/Section'
 import { SectionIndex } from '../../contexts/Section/Section'
 
-import { ToggleSectionButton } from '../InteractiveButton/ToggleButton'
-import { LilPopup } from '../LilPopup/LilPopup'
-
-import { Section } from '../../sections'
 import { Projects } from '../../sections/Projects'
 import { AboutNaz } from '../../sections/AboutNaz'
 import { ContactMe } from '../../sections/ContactMe'
+import { TitleSection } from '../../sections/TitleSection'
+
+import { MarkdownViewer } from '../MarkdownViewer/MarkdownViewer'
+import { ToggleSectionButton } from '../InteractiveButton/ToggleButton'
+import { LilPopup } from '../LilPopup/LilPopup'
 
 import css from './Main.module.css'
-import { MarkdownViewer } from '../MarkdownViewer/MarkdownViewer'
 
-const content: { icon: ReactNode; section: ReactNode }[] = []
+type Content = {
+  icon: ReactNode
+  section: ReactNode
+}
 
-content[SectionIndex.Projects] = { icon: <ProjectsIcon />, section: <Projects /> }
-content[SectionIndex.AboutNaz] = { icon: <AboutIcon />, section: <AboutNaz /> }
-content[SectionIndex.ContactMe] = { icon: <EmailIcon />, section: <ContactMe /> }
+const contentArr: Content[] = []
 
-/** This is v much temporary, so I'll allow it */
-const defaultSection = (
-  <Section title={"Nazaire Shabazz's Portfolio"}>
-    <div style={{ textAlign: 'center' }}>
-      <h2>Fullstack Web Developer</h2>
-      <p>
-        🛠️ Landing page still under reconstruction! 🛠️ Check out the options below ^_^
-      </p>
-    </div>
-  </Section>
-)
+contentArr[SectionIndex.Projects] = { icon: <ProjectsIcon />, section: <Projects /> }
+contentArr[SectionIndex.AboutNaz] = { icon: <AboutIcon />, section: <AboutNaz /> }
+contentArr[SectionIndex.ContactMe] = { icon: <EmailIcon />, section: <ContactMe /> }
+
+const defaultSection = <TitleSection />
 
 export const Main = () => {
   const { data: resProjects, error: errProjects, loading } = useProjects()
@@ -102,10 +97,10 @@ export const Main = () => {
           />
         )}
 
-        {sectionIdx == null ? defaultSection : content[sectionIdx].section}
+        {sectionIdx == null ? defaultSection : contentArr[sectionIdx].section}
 
         <menu className={`${css.menu} ${currentProject && css.lower}`}>
-          {content.reduce((arr, { icon: children }, key) => {
+          {contentArr.reduce((arr, { icon: children }, key) => {
             arr.push(
               <ToggleSectionButton
                 className={`particle-bouncer-rectangle`}
@@ -116,7 +111,7 @@ export const Main = () => {
             )
 
             // put a line between each section button
-            if (key !== content.length - 1)
+            if (key !== contentArr.length - 1)
               arr.push(<hr key={`hr${key}`} className={css.hr} />)
 
             return arr

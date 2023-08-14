@@ -4,7 +4,10 @@ import { BroadcastCBProps, usePlayerPositions } from '../../hooks/usePlayerPosit
 
 import css from './BGPlayers.module.css'
 
-type Position = { x: number; y: number }
+type Position = {
+  x: number
+  y: number
+}
 
 const localID = '0'
 const startingPositionMap = new Map<string, Position>([[localID, { x: 0, y: 0 }]])

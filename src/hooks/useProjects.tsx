@@ -11,7 +11,7 @@ export const useProjects = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    ;(async () => {
+    async function LoadData() {
       try {
         const { data, error } = await supabaseClient.from('project_metadata').select()
 
@@ -22,7 +22,9 @@ export const useProjects = () => {
       } finally {
         setLoading(false)
       }
-    })()
+    }
+
+    LoadData()
   }, [])
 
   return { loading, data, error }
