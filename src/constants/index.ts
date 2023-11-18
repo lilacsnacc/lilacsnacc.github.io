@@ -16,7 +16,7 @@ const dollarIncreasePerMonth = 0.5
 /** my minimum wage */
 export const rate = `$${(livingWage + monthsOfExp * dollarIncreasePerMonth) | 0}/hr`
 /** am I looking for a job? */
-export const openForHire = true
+export const openForHire = false
 /** my current email... I might create a new work-specific email */
 export const email = 'nqshabazz@gmail.com'
 /** aws endpoint for the SendEmail lambda */
