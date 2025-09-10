@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nazaire's Full Stack Portfolio</title>
+    <script type="module" crossorigin src="/assets/index-4e21ef4a.js"></script>
+    <link rel="stylesheet" href="/assets/index-a10d3c6e.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // thanks to silverwind of Github - that console.log was SO ANNOYINGGGGGG
+      // https://github.com/facebook/react/issues/24283#issuecomment-1552160985
+      try {
+        console.info = new Proxy(console.info, {
+          apply: (target, thisArg, args) => {
+            if (args?.[0]?.includes?.('React DevTools')) return
+            return Reflect.apply(target, thisArg, args)
+          }
+        })
+      } catch {}
+    </script>
+    
+  </body>
+</html>
