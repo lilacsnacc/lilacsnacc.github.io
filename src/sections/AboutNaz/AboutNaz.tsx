@@ -6,7 +6,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import CopyIcon from '@mui/icons-material/ContentCopy'
 import DownloadIcon from '@mui/icons-material/FileDownload'
 
-import ResumePath from '/Nazaire_Shabazz_Resume_2023.pdf'
+import ResumePath from '/Nazaire_Shabazz_Resume_2025.pdf'
 
 import { openForHire, rate, yearsOfExp, email } from '../../constants'
 
@@ -32,7 +32,7 @@ export function AboutNaz() {
   function downloadResume() {
     const elem = document.createElement('a')
 
-    elem.download = 'Nazaire Shabazz Resume 2023'
+    elem.download = 'Nazaire Shabazz Resume 2025'
     elem.href = ResumePath
     elem.click()
   }
@@ -76,7 +76,7 @@ export function AboutNaz() {
           <p>
             resume:{' '}
             <InteractiveButton onClick={downloadResume}>
-              Nazaire Shabazz 2023 <DownloadIcon />
+              Nazaire Shabazz 2025 <DownloadIcon />
             </InteractiveButton>
           </p>
         </div>
