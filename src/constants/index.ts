@@ -2,21 +2,21 @@ const d = new Date()
 
 /** NY State living wage as of July 2023
  * https://livingwage.mit.edu/states/36 */
-const livingWage = 21.46
+// const livingWage = 21.46
 /** started programming (professionally, fulltime) in 2018 */
 export const yearsOfExp = d.getFullYear() - 2018
 /** months of professional programming to date */
-const monthsOfExp = yearsOfExp * 12 + d.getMonth()
+// const monthsOfExp = yearsOfExp * 12 + d.getMonth()
 /** after thinking about it, I believe rate increase should be a 5 year bell curve,
  * with wage increase going up to +$1/hr/month at career peak (around 2.5yrs)...
  *
- * but that's a lot of math so we'll just say +25 cents/hr/month
  * this is down from 50 cents, since my thoughts on money / ownership have changed
- * now it's more charging out of necessity - I'd "work" for free if there weren't bills due
+ * now I take payment out of necessity - I'd "work" for free if there weren't bills due
  */
-const dollarIncreasePerMonth = 0.25
-/** my minimum wage */
-export const rate = `$${(livingWage + monthsOfExp * dollarIncreasePerMonth) | 0}/hr`
+// const dollarIncreasePerMonth = 0.42
+/** my minimum wage - this is how much my bills add up to per year */
+export const rate = `$60/hr`
+// export const rate = `$${(livingWage + monthsOfExp * dollarIncreasePerMonth) | 0}/hr`
 /** am I looking for a job? */
 export const openForHire = true
 /** my current email... I might create a new work-specific email */
