@@ -6,7 +6,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import CopyIcon from '@mui/icons-material/ContentCopy'
 import DownloadIcon from '@mui/icons-material/FileDownload'
 
-import ResumePath from '/Nazaire_Shabazz_Resume_2025.pdf'
+import ResumePath from '/Nazaire Shabazz Resume 2025.pdf'
 
 import { openForHire, rate, yearsOfExp, email } from '../../constants'
 
