@@ -1,4 +1,4 @@
-## Decorus.World
+# Decorus.World
 
 I'm making a videogame! I wanted to take this chance to embrace new, modern technologies, so I'm using Firebase, Svelte, and Babylon.js.
 
